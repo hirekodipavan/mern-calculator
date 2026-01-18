@@ -1,0 +1,20 @@
+{
+  "name": "mern-calculator",
+  "version": "1.0.0",
+  "description": "MERN Stack Calculator",
+  "main": "server/server.js",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build",
+    "start": "cd server && node server.js",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "11.x"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

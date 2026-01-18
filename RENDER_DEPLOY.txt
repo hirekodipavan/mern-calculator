@@ -1,0 +1,88 @@
+# Quick Deployment Steps for Render
+
+## ✅ You're Ready to Deploy!
+
+Your MERN Calculator is built and ready. Follow these simple steps:
+
+### Step 1: Push to GitHub
+
+```bash
+cd C:\vscode\mern-calculator
+
+# If not already a git repo, initialize it
+git init
+git add .
+git commit -m "MERN Calculator - Ready for Render deployment"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/mern-calculator.git
+git push -u origin main
+```
+
+### Step 2: Deploy on Render
+
+1. **Go to:** https://dashboard.render.com
+2. **Sign up** (if not already)
+3. Click **"New +"** → **"Web Service"**
+4. **Select:** "Deploy an existing project from a Git repository"
+5. **Click:** "Connect GitHub" and authorize Render
+6. **Select:** mern-calculator repository
+
+### Step 3: Configure Render Service
+
+Fill in these fields:
+
+```
+Name: mern-calculator
+Environment: Node
+Region: Singapore (or closest to you)
+Branch: main
+Build Command: npm install && npm run build
+Start Command: npm start
+Instance Type: Free
+```
+
+Click **"Create Web Service"**
+
+### Step 4: Wait & Done! ✅
+
+- Deployment takes 3-5 minutes
+- You'll get a URL like: `https://mern-calculator-xxxxx.onrender.com`
+- Your calculator is LIVE! 🎉
+
+---
+
+## Testing Your Deployment
+
+1. Open your Render URL in the browser
+2. You should see "Pavan Calculator"
+3. Test: Try clicking buttons and performing calculations
+4. All operations should work!
+
+---
+
+## Auto-Deployment
+
+After initial deployment:
+- Any push to `main` branch = automatic redeploy
+- Changes appear live in 3-5 minutes
+- No manual steps needed!
+
+---
+
+## Troubleshooting
+
+**Blank page?**
+- Hard refresh: Ctrl+Shift+R
+- Check browser console: F12
+
+**Build failed?**
+- Check Render logs for errors
+- Ensure local build works: `npm run build`
+
+**Slow first load?**
+- Free tier sleeps after 15 min of inactivity
+- First request spins up the service (~30 sec)
+
+---
+
+For more details, see `DEPLOYMENT.md`
